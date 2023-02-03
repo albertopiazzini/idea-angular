@@ -12,9 +12,9 @@ You can also comment with your opinion on other users' posts through comments. <
 
 <h2> Local installation </h2>
 
-<ul>
-  <ol> hbvghbn</ol>
-  <ol> hbvghbn</ol>
+<ol>
+  <li> hbvghbn</li>
+  <li> hbvghbn</li>
   
-  </ul>
+  </ol>
 
