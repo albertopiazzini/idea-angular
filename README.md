@@ -10,6 +10,21 @@ You can also comment with your opinion on other users' posts through comments. <
 
 <p> To try the application follow the link <a target="_blank" href="https://idea-ng.web.app"> https://idea-ng.web.app</a> </p>
 
+<h2> Develpment </h2>
+
+<p> The application was built entirely with the angular framework</p>
+<p> External libraries</p>
+<ul>
+  <li> Angular Material</li>
+    <li> rxJS</li>
+
+  
+  </ul>
+
+
+
+
+
 <h2> Local installation </h2>
 <p> For local installation you will need node.js and angular cli, then follow the steps below:
 
