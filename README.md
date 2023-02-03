@@ -35,4 +35,7 @@ You can also comment with your opinion on other users' posts through comments. <
   <li> hbvghbn</li>
   
   </ol>
+  
+  <h3> Personal contact</h3>
+  <p> If you are interested in getting to know me better, you can contact me here: albepiazzo@gmail.com</p>
 
