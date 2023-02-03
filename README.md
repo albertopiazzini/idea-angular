@@ -8,4 +8,4 @@ In this application, after logging in, you can share your ideas through posts.
   
 You can also comment with your opinion on other users' posts through comments. </p>
 
-<p> To try the application follow the link <a href="https://idea-ng.web.app" target=”_blank”> https://idea-ng.web.app</a> </p>
+<p> To try the application follow the link <a target="_blank" href="https://idea-ng.web.app"> https://idea-ng.web.app</a> </p>
