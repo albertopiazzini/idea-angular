@@ -37,5 +37,5 @@ You can also comment with your opinion on other users' posts through comments. <
   </ol>
   
   <h3> Personal contact</h3>
-  <p> If you are interested in getting to know me better, you can contact me here: <a  href="albepiazzo@gmail.com"> albepiazzo@gmail.com</a></p>
+  <p> If you are interested in getting to know me better, you can contact me here: <a  href="mailto:albepiazzo@gmail.com"> albepiazzo@gmail.com</a></p>
 
