@@ -12,8 +12,8 @@ You can also comment with your opinion on other users' posts through comments. <
 
 <h2> Develpment </h2>
 
-<p> The application was built entirely with the angular framework</p>
-<p> External libraries</p>
+<p> The application was built entirely with Angular framework</p>
+<p> External libraries:</p>
 <ul>
   <li> Angular Material</li>
     <li> rxJS</li>
