@@ -1,1 +1,1 @@
-# idea-angular1
+# idea-angular
