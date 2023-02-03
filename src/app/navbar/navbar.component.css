@@ -1,0 +1,35 @@
+nav {
+  width: 100%;
+  background-color: azure;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.logo {
+  width: 130px;
+  margin: 7px;
+  cursor: pointer;
+}
+.icon-logout {
+  width: 9%;
+  cursor: pointer;
+  margin-left: 30px;
+}
+
+button {
+  padding: 5px;
+  border-radius: 10px;
+  margin-right: 20px;
+  font-size: 17px;
+  border: none;
+}
+
+.active {
+  padding: 7px;
+  font-weight: bold;
+  border: 2px solid lightskyblue;
+}

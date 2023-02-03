@@ -1,0 +1,25 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthenticationComponent } from './authentication/authentication.component';
+import { CreateNewPostComponent } from './create-new-post/create-new-post.component';
+import { CreateNewUserComponent } from './create-new-user/create-new-user.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
+import { PostsListComponent } from './posts-list/posts-list.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UsersListComponent } from './users-list/users-list.component';
+
+const routes: Routes = [
+  { path: '', component: AuthenticationComponent },
+  { path: 'users', component: UsersListComponent },
+  { path: 'posts', component: PostsListComponent },
+  { path: 'new-user', component: CreateNewUserComponent },
+  { path: 'user/:id', component: UserDetailComponent },
+  { path: 'post/:id', component: PostDetailComponent },
+  { path: 'new-post', component: CreateNewPostComponent },
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}

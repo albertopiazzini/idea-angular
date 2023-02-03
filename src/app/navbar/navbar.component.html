@@ -1,0 +1,17 @@
+<nav>
+  <div class="logo">
+    <img
+      src="./assets/logo-idea.png"
+      alt="Logo"
+      class="logo"
+      routerLink="/users"
+    />
+  </div>
+  <div class="button">
+    <button routerLink="/users" routerLinkActive="active">USERS</button>
+    <button routerLink="/posts" routerLinkActive="active">POSTS</button>
+    <span
+      ><img src="./assets/logout-icon.png" alt="Logout" class="icon-logout" (click)="logout()"
+    /></span>
+  </div>
+</nav>

@@ -1,0 +1,15 @@
+footer {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyright {
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+hr {
+  margin-top: 40px;
+}
