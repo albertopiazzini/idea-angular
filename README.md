@@ -4,9 +4,14 @@
 
 <p>The name I gave to this project is idea.
   
-In this application, after logging in, you can share your ideas through posts.
+In this application, after logging in, you can share your ideas with posts.
   
-You can also comment with your opinion on other users' posts through comments. </p>
+You can also comment with your opinion on other users' posts through comments. 
+  
+For the functioning of the application I used this API: <a href="https://gorest.co.in">https://gorest.co.in </a> 
+
+
+</p>
 
 <p> To try the application follow the link <a target="_blank" href="https://idea-ng.web.app"> https://idea-ng.web.app</a> </p>
 
