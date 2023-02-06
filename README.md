@@ -4,7 +4,7 @@
 
 <p>The name I gave to this project is idea.
   
-In this application, after logging in, you can share your ideas with posts.
+In this application, after logging in (you will need to have your own special token which you can get <a href="https://gorest.co.in/consumer/login">here </a>), you can share your ideas with posts.
   
 You can also comment with your opinion on other users' posts through comments. 
   
