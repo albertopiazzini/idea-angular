@@ -31,7 +31,7 @@ You can also comment with your opinion on other users' posts through comments. <
 </p>
 
 <ol>
-  <li> hbvghbn</li>
+  <li> Install Angular Material with the command (ng add @angular/material), </li>
   <li> hbvghbn</li>
   
   </ol>
