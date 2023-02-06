@@ -30,7 +30,7 @@
     </span>
   </div>
 
-  <h1 *ngIf="posts.length == 0" class="no-user-text">No posts found</h1>
+  <h1 *ngIf="posts.length == 0 && !isFetching" class="no-user-text">No posts found</h1>
 
   <div class="paginator">
     <mat-paginator
