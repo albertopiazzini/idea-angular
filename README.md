@@ -7,6 +7,8 @@
 In this application, after logging in (you will need to have your own special token which you can get <a href="https://gorest.co.in/consumer/login">here</a>), you can share your ideas with posts.
   
 You can also comment with your opinion on other users' posts through comments. 
+
+Browsing in the application you will then be able to see all the users and all the published posts.
   
 For the functioning of the application I used this API: <a href="https://gorest.co.in">https://gorest.co.in </a> 
 
