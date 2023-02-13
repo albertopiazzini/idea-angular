@@ -22,15 +22,19 @@ import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
+    FooterComponent,
+    
     AuthenticationComponent,
     UsersListComponent,
-    NavbarComponent,
+    
     PostsListComponent,
-    CreateNewUserComponent,
-    UserDetailComponent,
-    CreateNewPostComponent,
     PostDetailComponent,
-    FooterComponent,
+    UserDetailComponent,
+    CreateNewUserComponent,
+    CreateNewPostComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
