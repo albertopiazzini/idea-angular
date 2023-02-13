@@ -15,6 +15,8 @@ import {
 } from '@angular/common/http';
 import { CreateNewPostComponent } from './create-new-post.component';
 import { Post } from '../model';
+import { User } from "../model";
+
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { HttpServiceService } from '../services/http-service.service';
