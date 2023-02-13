@@ -58,7 +58,7 @@ describe('CreateNewPostComponent', () => {
       title: 'title of testing post',
       body: 'body of testing post',
     };
-       const UserTest: User = {
+       const user: User = {
       name: "name test",
       email: "test@test.it",
       gender: "male",
