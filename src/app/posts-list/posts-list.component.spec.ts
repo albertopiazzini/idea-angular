@@ -8,6 +8,8 @@ import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Post } from '../model';
 import { of } from 'rxjs';
@@ -35,6 +37,7 @@ describe('PostsListComponent', () => {
         BrowserAnimationsModule,
       ],
       providers: [HttpServiceService],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PostsListComponent);
