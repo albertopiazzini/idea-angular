@@ -56,6 +56,13 @@ describe('CreateNewPostComponent', () => {
       title: 'title of testing post',
       body: 'body of testing post',
     };
+       const UserTest: User = {
+      name: "name test",
+      email: "test@test.it",
+      gender: "male",
+      id: 234,
+      status: "active",
+    };
     const testResponse = new HttpResponse({ body: testPost, status: 201 });
     spyOn(service, 'createNewPost').and.returnValue(of(testResponse));
     component.createNewPost();
