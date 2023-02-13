@@ -4,6 +4,8 @@ import {
   fakeAsync,
   flush,
 } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpResponse } from '@angular/common/http';
 import { User } from '../model';
@@ -30,6 +32,7 @@ describe('UsersListComponent', () => {
         BrowserAnimationsModule,
       ],
       providers: [HttpServiceService],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
 
     fixture = TestBed.createComponent(UsersListComponent);
