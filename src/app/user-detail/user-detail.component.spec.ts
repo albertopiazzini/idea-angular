@@ -8,6 +8,8 @@ import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -37,6 +39,7 @@ describe('UserDetailComponent', () => {
         },
         HttpServiceService,
       ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
 
     fixture = TestBed.createComponent(UserDetailComponent);
