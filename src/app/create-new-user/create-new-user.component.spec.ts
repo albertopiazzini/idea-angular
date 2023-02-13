@@ -7,6 +7,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { User } from '../model';
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+
 
 import { CreateNewUserComponent } from './create-new-user.component';
 
@@ -20,6 +22,7 @@ describe('CreateNewUserComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [CreateNewUserComponent],
       imports: [HttpClientTestingModule, FormsModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CreateNewUserComponent);
