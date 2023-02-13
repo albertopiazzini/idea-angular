@@ -8,6 +8,8 @@ import {
   flush,
   fakeAsync,
 } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { PostDetailComponent } from './post-detail.component';
@@ -43,6 +45,7 @@ describe('PostDetailComponent', () => {
           },
         },
       ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PostDetailComponent);
