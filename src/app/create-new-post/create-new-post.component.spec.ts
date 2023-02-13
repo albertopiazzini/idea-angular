@@ -13,6 +13,8 @@ import {
   HttpErrorResponse,
   HttpResponse,
 } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+
 import { CreateNewPostComponent } from './create-new-post.component';
 import { Post } from '../model';
 import { User } from "../model";
@@ -36,6 +38,7 @@ describe('CreateNewPostComponent', () => {
       declarations: [CreateNewPostComponent],
       imports: [HttpClientTestingModule, FormsModule],
       providers: [HttpServiceService],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CreateNewPostComponent);
