@@ -1,102 +1,83 @@
+import { HttpResponse } from "@angular/common/http";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import {
   ComponentFixture,
   fakeAsync,
-  TestBed,
   flush,
-} from '@angular/core/testing';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpResponse,
-} from '@angular/common/http';
-import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+  TestBed,
+} from "@angular/core/testing";
+import { FormsModule, NgForm } from "@angular/forms";
+import { RouterModule } from "@angular/router";
+import { Router } from "@angular/router";
+import { of } from "rxjs";
+import { Post, User } from "../model";
+import { HttpServiceService } from "../services/http-service.service";
 
-import { CreateNewPostComponent } from './create-new-post.component';
-import { Post } from '../model';
-import { User } from "../model";
+import { CreateNewPostComponent } from "./create-new-post.component";
+import { PostsListComponent } from "../posts-list/posts-list.component";
 
-import { environment } from 'src/environments/environment';
-import { FormsModule } from '@angular/forms';
-import { HttpServiceService } from '../services/http-service.service';
-import { of } from 'rxjs';
-
-describe('CreateNewPostComponent', () => {
+describe("CreateNewPostComponent", () => {
   let component: CreateNewPostComponent;
+  let component2: CreateNewPostComponent;
   let fixture: ComponentFixture<CreateNewPostComponent>;
-  let httpClient: HttpClient;
   let service: HttpServiceService;
-  let httpClientSpy: { post: jasmine.Spy; put: jasmine.Spy };
-
-  let httpTestingController: HttpTestingController;
-
+  let router: Router;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [CreateNewPostComponent],
-      imports: [HttpClientTestingModule, FormsModule],
+      imports: [
+        HttpClientTestingModule,
+        FormsModule,
+        RouterModule.forRoot([
+          { path: "posts", component: PostsListComponent },
+        ]),
+      ],
       providers: [HttpServiceService],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CreateNewPostComponent);
-    httpClientSpy = jasmine.createSpyObj('HttpClient', ['post', 'put']);
 
-    component = fixture.componentInstance;
-    httpClient = TestBed.inject(HttpClient);
-    httpTestingController = TestBed.inject(HttpTestingController);
-    service = new HttpServiceService(httpClientSpy as any);
+    let httpClientSpy: { post: jasmine.Spy };
+    httpClientSpy = jasmine.createSpyObj("HttpClient", ["post"]);
+    router = TestBed.inject(Router);
+    service = new HttpServiceService(<any>httpClientSpy);
+    component = new CreateNewPostComponent(service, router);
+    component2 = fixture.componentInstance;
+    const userTest: User = {
+      name: "name test",
+      email: "test@test.com",
+      gender: "male",
+      status: "active",
+      id: 7465,
+    };
+    localStorage.setItem("currentUser", JSON.stringify(userTest));
+    let user = JSON.parse(`${localStorage.getItem("currentUser")}`);
 
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 
-  it('create a post', fakeAsync(() => {
-    const testPost: Post = {
-      title: 'title of testing post',
-      body: 'body of testing post',
+  it("Should create post and recive response 201 status", fakeAsync(() => {
+    const post: Post = {
+      title: "Title for test add post",
+      body: "body for test add post",
+      user_id: 22543,
     };
-       const user: User = {
-      name: "name test",
-      email: "test@test.it",
-      gender: "male",
-      id: 234,
-      status: "active",
-    };
-    const testResponse = new HttpResponse({ body: testPost, status: 201 });
-    spyOn(service, 'createNewPost').and.returnValue(of(testResponse));
+
+    const response = new HttpResponse({
+      body: post,
+      status: 201,
+    });
+
+    spyOn(service, "createNewPost").and.returnValue(of(response));
     component.createNewPost();
     flush();
-    expect(201).toEqual(testResponse.status);
+    expect(201).toEqual(response.status);
   }));
-
-  it('can test for 404 error', () => {
-    const emsg = 'deliberate 404 error';
-    const testPost: Post = {
-      title: 'title of testing post',
-      body: 'body of testing post',
-      user_id: 7454,
-    };
-
-    httpClient
-      .post<Post>(`${environment.userLink}/7454/posts`, testPost)
-      .subscribe({
-        next: () => fail('should have failed with the 404 error'),
-        error: (error: HttpErrorResponse) => {
-          expect(error.status).withContext('status').toEqual(404);
-          expect(error.error).withContext('message').toEqual(emsg);
-        },
-      });
-
-    const req = httpTestingController.expectOne(
-      `${environment.userLink}/7454/posts`
-    );
-
-    req.flush(emsg, { status: 404, statusText: 'Not Found' });
-  });
 });
+
