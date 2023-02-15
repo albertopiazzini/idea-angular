@@ -65,7 +65,7 @@ describe('PostDetailComponent', () => {
       id: 7465,
     };
     localStorage.setItem("currentUser", JSON.stringify(userTest));
-    let user = JSON.parse(`${localStorage.getItem("currentUser")}`)
+        let comments: Comment[] = [];
 
     fixture.detectChanges();
   });
