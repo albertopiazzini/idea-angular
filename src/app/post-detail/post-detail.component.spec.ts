@@ -65,19 +65,13 @@ describe('PostDetailComponent', () => {
       id: 7465,
     };
     localStorage.setItem("currentUser", JSON.stringify(userTest));
-        let comments: Comment[] = [];
+    let user = JSON.parse(`${localStorage.getItem("currentUser")}`);
+  
 
     fixture.detectChanges();
   });
 
   it('should create', () => {
-     const user: User = {
-      name: "name test",
-      email: "test@test.it",
-      gender: "male",
-      id: 234,
-      status: "active",
-    };
     expect(component).toBeTruthy();
   });
 
@@ -87,13 +81,7 @@ describe('PostDetailComponent', () => {
       body: 'body of testing post',
       id: 9876,
     };
-     const user: User = {
-      name: "name test",
-      email: "test@test.it",
-      gender: "male",
-      id: 234,
-      status: "active",
-    };
+    
     const testResponse = new HttpResponse({ body: postTest, status: 201 });
     spyOn(service, 'getPostById').and.returnValue(of(testResponse));
     component.ngOnInit();
@@ -108,14 +96,7 @@ describe('PostDetailComponent', () => {
       body: 'body post test',
       id: 564,
     };
-     const user: User = {
-      name: "name test",
-      email: "test@test.it",
-      gender: "male",
-      id: 234,
-      status: "active",
-    };
-
+     
     httpClient.post<Post>(`${environment.postLink}/564`, postTest).subscribe({
       next: () => fail('should have failed with the 404 error'),
       error: (error: HttpErrorResponse) => {
