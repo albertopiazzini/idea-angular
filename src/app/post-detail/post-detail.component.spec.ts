@@ -44,6 +44,7 @@ describe('PostDetailComponent', () => {
             snapshot: { paramMap: convertToParamMap({ id: 987 }) },
           },
         },
+        HttpServiceService,
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
@@ -55,6 +56,16 @@ describe('PostDetailComponent', () => {
     httpClient = TestBed.inject(HttpClient);
     httpTestingController = TestBed.inject(HttpTestingController);
     service = new HttpServiceService(httpClientSpy as any);
+    
+    const userTest: User = {
+      name: "name test",
+      email: "test@test.com",
+      gender: "male",
+      status: "active",
+      id: 7465,
+    };
+    localStorage.setItem("currentUser", JSON.stringify(userTest));
+    let user = JSON.parse(`${localStorage.getItem("currentUser")}`
 
     fixture.detectChanges();
   });
