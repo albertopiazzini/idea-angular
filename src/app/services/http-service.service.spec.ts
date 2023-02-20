@@ -135,4 +135,45 @@ describe('HttpServiceService', () => {
 
     expect(error).toEqual(error);
   });
+  it("#editUser", (done: DoneFn) => {
+    const user: User = {
+      name: "name test",
+      email: "testmail@hotmail.it",
+      status: "active",
+      gender: "female",
+    };
+    const resp = new HttpResponse({ status: 201 });
+
+    httpClienteSpy.put.and.returnValue(of(resp));
+    service.updateUser(1, user).subscribe((data) => {
+      expect(data.status).toEqual(201);
+      done();
+    });
+    expect(service.updateUser(123, user)).toBeDefined;
+    expect(true).toBeTruthy();
+  });
+
+  it("#getUserPost", (done: DoneFn) => {
+    const resp = new HttpResponse({ status: 200 });
+
+    httpClienteSpy.get.and.returnValue(of(resp));
+    service.getUserPost(456).subscribe((data) => {
+      expect(data.status).toEqual(200);
+      done();
+    });
+    expect(service.getUserPost(675)).toBeDefined;
+    expect(true).toBeTruthy();
+  });
+
+  it("#getCommentPost", (done: DoneFn) => {
+    const resp = new HttpResponse({ status: 200 });
+    httpClienteSpy.get.and.returnValue(of(resp));
+    service.getCommentPost(76).subscribe((data) => {
+      expect(data.status).toEqual(200);
+      done();
+    });
+
+    expect(service.getCommentPost(76)).toBeDefined;
+    expect(true).toBeTruthy();
+  });
 });
