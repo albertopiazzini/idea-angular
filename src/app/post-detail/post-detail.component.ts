@@ -56,5 +56,7 @@ export class PostDetailComponent implements OnInit {
         this.loadComment();
       });
     this.addCommentBox = false;
+    this.newComment.body = "";
+
   }
 }
