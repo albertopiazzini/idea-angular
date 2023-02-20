@@ -21,8 +21,8 @@ export class PostDetailComponent implements OnInit {
   addCommentBox: boolean;
   newComment: Comment = {
     post_id: this.id_post,
-    name: this.user.name,
-    email: this.user.email,
+    name: '',
+    email: '',
     body: '',
   };
 
@@ -47,6 +47,8 @@ export class PostDetailComponent implements OnInit {
   }
 
   addNewComment() {
+    this.newComment.name = this.user.name;
+    this.newComment.email = this.user.email;
     console.log(this.newComment);
     this.http
       .createPostComment(this.newComment, this.id_post)
