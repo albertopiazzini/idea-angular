@@ -17,7 +17,7 @@ For the functioning of the application I used this API: <a href="https://gorest.
 
 <p> To try the application follow the link <a target="_blank" href="https://idea-ng.web.app"> https://idea-ng.web.app</a> </p>
 
-<h2> Develpment </h2>
+<h2> Development </h2>
 
 <p> The application was built entirely with Angular framework</p>
 <p> External libraries:</p>
